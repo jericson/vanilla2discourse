@@ -39,15 +39,22 @@ Then in Discourse, you could set the main depth to be 2 and get:
   * Sublevel
 
 ```
-$ ./tier_categories.rb talk.collegeconfidential.com discuss.qa.collegeconfidential.com -d 2
+$ ./tier_categories.rb talk.collegeconfidential.com discuss.qa.collegeconfidential.com -t 2
 ```
 
 
 ## flatten_cats.rb
 
+This does the reverse of `tier_categories.rb`. It goes through all the
+Discourse categories that have parents and makes them top-level. This
+might be necessary if you, I don't know, screw up the previous
+script. (Not that I would know. 8-)
+
 ```
 ./flatten_cats.rb discuss.qa.collegeconfidential.com
 ```
+
+## 
 
 <!--  LocalWords:  utopian
  -->
