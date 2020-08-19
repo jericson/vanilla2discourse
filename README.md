@@ -39,7 +39,7 @@ Then in Discourse, you could set the main depth to be 2 and get:
   * Sublevel
 
 ```
-$ ./tier_categories.rb talk.collegeconfidential.com discuss.qa.collegeconfidential.com -t 2
+$ tier_categories.rb VANILLA_HOST DISCOURSE_HOST -t 2
 ```
 
 
@@ -51,10 +51,21 @@ might be necessary if you, I don't know, screw up the previous
 script. (Not that I would know. 8-)
 
 ```
-./flatten_cats.rb discuss.qa.collegeconfidential.com
+$ flatten_cats.rb DISCOURSE_HOST
 ```
 
-## 
+## alpha_cats.rb
+
+I have a big list of schools that I need to organize. The logical
+first step is to use the alphabet, which is already a known sorting
+method. For the purposes of this script, I remove "University of "
+while sorting. This could be made general, but I'm gonna be lazy for
+now. (If this seems like a useful script for your Discourse instance,
+please let me know and I'll parameterize this script.)
+
+```
+$ alpha_cats.rb DISCOURSE_HOST
+```
 
 <!--  LocalWords:  utopian
  -->
