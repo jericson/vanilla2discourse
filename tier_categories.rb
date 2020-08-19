@@ -13,8 +13,11 @@ def update_discourse_category (child, parent)
 
   cat = get_discourse_category(child)
   parent_id = get_discourse_category(parent)['id']
+  
+  return if cat.nil?
+  return if parent_id.nil?
 
-  return unless cat
+  #pp cat
   
   response = @client.update_category(
     id: cat['id'],
@@ -23,7 +26,7 @@ def update_discourse_category (child, parent)
     text_color: cat['text_color'],
     
     # Add parameter(s) you actually want to update below
-    parent_category_id: parent_id, # I'm nesting a bunch of categories under #7
+    parent_category_id: parent_id, 
   )
 
 

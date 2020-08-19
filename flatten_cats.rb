@@ -8,22 +8,6 @@ require 'date'
 
 load "lib/util.rb"
 
-
-def get_discourse_category (name)
-  response = @client.categories
-
-  cat = response.find {|e| e['name'] == name}
-
-  unless cat
-    c = response.find {|e| e['has_children'] == true}
-    subs = @client.categories(parent_category_id: c["id"])
-    cat = subs.find {|e| e['name'] == name}
-    
-  end
-
-  return cat
-end  
-
 def flatten_discourse_category (child)
 
   cat = get_discourse_category(child)

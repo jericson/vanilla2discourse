@@ -6,7 +6,7 @@ Discourse. May only be useful for me.
 You'll want to set three environment variables:
 
 * `VANILLA_API`&mdash;Acquire via `https://YOUR_VANILLA_SITE/profile/tokens`.
-* `DISCOURSE_API`&mdash;;Acquire via `https://YOUR_DISCOURSE_SITE/admin/api/keys`.
+* `DISCOURSE_API`&mdash;Acquire via `https://YOUR_DISCOURSE_SITE/admin/api/keys`.
 * `DISCOURSE_USER`
 
 You'll also want at least one existing Vanilla site and one Discourse
