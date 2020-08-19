@@ -79,5 +79,17 @@ originally called `kill_cats.rb`, but that started to make
 ```
 $ delete_cats.rb DISCOURSE_HOST
 ```
+
+## transfer_avatars.rb
+
+People online are more than 50% their avatars. How you chose to
+represent yourself matters a great deal. Our import didn't bring over
+avatars from Vanilla, so I wrote this post-processing script. It
+ignores default avatars.
+
+```
+$ transfer_avatars.rb VANILLA_HOST DISCOURSE_HOST -t 2
+```
+
 <!--  LocalWords:  utopian
  -->
