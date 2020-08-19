@@ -67,5 +67,17 @@ please let me know and I'll parameterize this script.)
 $ alpha_cats.rb DISCOURSE_HOST
 ```
 
+## delete_cats.rb
+
+The solution our forums had for the large number of schools is to
+alphabetize under categories named A through W and X-Y-Z. Those aren't
+real categories with discussions, but just organizing
+pseudo-categories. So I want to delete them. (Fun fact: the script was
+originally called `kill_cats.rb`, but that started to make
+`flatten_cats.rb` feel uncomfortable.)
+
+```
+$ delete_cats.rb DISCOURSE_HOST
+```
 <!--  LocalWords:  utopian
  -->
