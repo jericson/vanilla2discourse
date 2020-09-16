@@ -82,13 +82,31 @@ $ delete_cats.rb DISCOURSE_HOST
 
 ## transfer_avatars.rb
 
-People online are more than 50% their avatars. How you chose to
+People online love their avatars. How you chose to
 represent yourself matters a great deal. Our import didn't bring over
 avatars from Vanilla, so I wrote this post-processing script. It
 ignores default avatars.
 
 ```
-$ transfer_avatars.rb VANILLA_HOST DISCOURSE_HOST -t 2
+$ transfer_avatars.rb VANILLA_HOST DISCOURSE_HOST 
+```
+
+
+## update_users.rb
+
+This script transfers avatars and also a few other things. It makes
+moderators on Vanilla also moderators on Discourse. It also maps
+people to the appropriate trust level based on rank:
+
+Rank          | Trust Level
+----          | -----------
+New Member    |           0
+Junior Member |           1
+Member        |           2
+Senior Member |           3
+
+```
+$ update_users.rb VANILLA_HOST DISCOURSE_HOST [-r ROLE_ID] [-u USER_COUNT]
 ```
 
 <!--  LocalWords:  utopian
