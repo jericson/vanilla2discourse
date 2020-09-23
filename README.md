@@ -109,5 +109,26 @@ Senior Member |           3
 $ update_users.rb VANILLA_HOST DISCOURSE_HOST [-r ROLE_ID] [-u USER_COUNT]
 ```
 
+## show_warnings.rb
+
+At the moment, [moderators can't see a list of warnings they way they
+can
+suspensions](https://meta.discourse.org/t/why-arent-warnings-easily-accessible-like-suspensions-are/164043). This
+script creates the most bare-boned report of a user's warnings. For
+obvious reason, this should only be shown to staff
+(moderators+admins). How many warnings and the title of those warnings
+shouldn't be broadcast to other users. The links themselves can be
+seen by staff and the user who has been warned. (And this API will
+fail unless the API key is authorized to get this data.)
+
+```
+$ update_users.rb DISCOURSE_HOST USERNAME
+```
+
+To see the script in action, redirect the output to a file (`>
+username.html`) and open it in a browser (`$ open username.html`). I
+could use a lot more styling that I'm not planning on doing because
+I'm unqualified.
+
 <!--  LocalWords:  utopian
  -->
