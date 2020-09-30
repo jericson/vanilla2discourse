@@ -122,13 +122,24 @@ seen by staff and the user who has been warned. (And this API will
 fail unless the API key is authorized to get this data.)
 
 ```
-$ update_users.rb DISCOURSE_HOST USERNAME
+$ show_warings.rb DISCOURSE_HOST USERNAME
 ```
 
 To see the script in action, redirect the output to a file (`>
 username.html`) and open it in a browser (`$ open username.html`). I
 could use a lot more styling that I'm not planning on doing because
 I'm unqualified.
+
+## post_announcements.rb
+
+When we import data all the posts are wiped out, which means I need to
+repost a few announcements and the banner. This should _really_ be
+made more general. Also, making a post a banner isn't working at the
+moment.
+
+```
+$ post_announcements.rb DISCOURSE_HOST
+```
 
 <!--  LocalWords:  utopian
  -->
