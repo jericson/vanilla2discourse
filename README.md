@@ -152,6 +152,15 @@ download the `categories.json` file from the existing site:
 $ upload_cats.rb DISCOURSE_HOST
 ```
 
+## update_settings.rb
+
+This script updates random setting to the way I need them on my
+site. Probably not useful for you without edits. :-(
+
+```
+$ update_settings.rb DISCOURSE_HOST
+```
+
 
 <!--  LocalWords:  utopian
  -->
