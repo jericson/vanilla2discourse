@@ -141,5 +141,17 @@ moment.
 $ post_announcements.rb DISCOURSE_HOST
 ```
 
+## upload_cats.rb
+
+Once you have the categories to your liking on an instance of
+Discourse, you might want to copy them to a new instance. To do this,
+download the `categories.json` file from the existing site:
+`https://DISCOURSE_HOST/categories.json`. 
+
+```
+$ upload_cats.rb DISCOURSE_HOST
+```
+
+
 <!--  LocalWords:  utopian
  -->
