@@ -97,7 +97,7 @@ for i in 1..n do
         "Junior Member"     => 1,
         "Member"            => 2,
         "Senior Member"     => 3,
-        "Forum Champion"    => 3,
+        "Forum Champion"    => 4,
         "Super Moderator"   => 3,
         "Editor"            => 3,
         "Community Manager" => 3,
@@ -112,13 +112,17 @@ for i in 1..n do
       @client.update_trust_level(user['id'], { level: level_map[u['rank']['name']]})
 
       if u['rank']['name'] == 'Super Moderator'
-        puts "Making #{ u['name']} a moderator!"
-        @client.grant_moderation(user['id'])
+        begin
+          puts "Making #{ u['name']} a moderator!"
+          @client.grant_moderation(user['id'])
+        rescue DiscourseApi::UnauthenticatedError => error
+           puts error.response.body['errors'].first
+        end
       end
       
       unless u['photoUrl'].match?("/uploads/defaultavatar/") and u['banned']
         begin
-        puts @client.update_avatar(u['name'].gsub(/ /,'_'), url: u['photoUrl'])
+          puts @client.update_avatar(u['name'].gsub(/ /,'_'), url: u['photoUrl'])
         rescue DiscourseApi::NotFoundError => error
           puts error.response.body['errors'].first
         end

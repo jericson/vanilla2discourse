@@ -24,6 +24,14 @@ settings = {
   'top menu' => 'categories|latest|new|unread|bookmarks',
   'sso overrides username' => 'false',
   'username change period' => 0,
+  'categories topics' => 0,
+  'share quote visibility' => 'all',
+  'category style' => 'none',
+  'email editable' => false,
+  'allow uncategorized topics' => false,
+  'restrict letter avatar colors' => '006699',
+  'allowed iframes' => 'https://www.youtube.com',
+  'default other external links in new tab' => true,
   
 }
 

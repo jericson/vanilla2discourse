@@ -26,7 +26,11 @@ options[:discourse_site] = ARGV[0]
 #pp @client.categories(parent_category_id: 10).find {|e| e['name'] == 'B'}
 
 for c in [*('A' .. 'W'), 'X-Y-Z', 'College Admissions and Search']
-  delete_discourse_category(c)
+  begin
+    delete_discourse_category(c)
+  rescue DiscourseApi::UnauthenticatedError => error
+    puts "#{c} not deleted becuase it has topics under it."
+  end
   sleep (2)
 end
 
