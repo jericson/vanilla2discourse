@@ -28,8 +28,10 @@ options[:discourse_site] = ARGV[0]
  
 @client = init_discourse(options)
 
-for c in @client.categories() do
+#for c in @client.categories() do
+site ||= @client.get("#{@client.host}/site.json")
 
+site.response_body['categories'].each do |c|
   if c['has_children']
 
     for s in @client.categories(parent_category_id: c['id']) do
